@@ -15,6 +15,7 @@
   * Describe Maven
   * Describe REST Api
   * Implement Customer Controller CRUD methods
+  * update .gitignore
 * Tools:
   * Introduce Postman. Demo Postman - Spring interaction
 
