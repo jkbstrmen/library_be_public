@@ -1,12 +1,6 @@
 # Library backend
 
-## Week 1:
-
-### Prerequisites
-* Knowledge of Git and GitHub
-* Installed software
-  * Java 17
-  * Maven
+## Week 1
 
 ### Objective
 * Implement minimal Spring REST application
@@ -17,7 +11,16 @@
   * Implement Customer Controller CRUD methods
   * update .gitignore
 * Tools:
-  * Introduce Postman. Demo Postman - Spring interaction
+  * Introduce Postman.
+    * Install Postman
+    * Create Postman account
+    * Demo Postman - Spring interaction
+
+### Prerequisites
+* Knowledge of Git and GitHub
+* Installed software
+  * Java 17
+  * Maven
 
 ### Notes
 * Put emphasis on code organization into packages.
