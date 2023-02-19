@@ -72,3 +72,12 @@ public class BorrowingController {
 * Create resource / POST 
 * Update resource / PUT
 * Delete resource / DELETE
+
+## Week 2
+
+### Objective
+* Describe and implement service concept.
+* Spring
+  * Add Swagger dependency   
+  * Explain Service application layer
+  * Introduce @Service annotation
