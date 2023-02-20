@@ -35,7 +35,9 @@ public class CustomerService {
         CustomerDetailDTO customerDetailDTO = mapToCustomerDetailDTO(lastIndex.getAndIncrement(),
                                                                      customerRequestDTO);
 
-        return customerDatabase.put(customerDetailDTO.getId(), customerDetailDTO).getId();
+        customerDatabase.put(customerDetailDTO.getId(), customerDetailDTO);
+
+        return customerDetailDTO.getId();
     }
 
     private static CustomerDetailDTO mapToCustomerDetailDTO(Long index, CustomerRequestDTO customerRequestDTO) {
