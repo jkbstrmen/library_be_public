@@ -1,5 +1,14 @@
 # Library backend
 
+## Week 2
+
+### Objective
+* Describe and implement service concept.
+* Spring
+  * Add Swagger dependency
+  * Explain Service application layer
+  * Introduce @Service annotation
+
 ## Week 1
 
 ### Objective
@@ -73,11 +82,8 @@ public class BorrowingController {
 * Update resource / PUT
 * Delete resource / DELETE
 
-## Week 2
+#### Homework acceptance criteria
 
-### Objective
-* Describe and implement service concept.
-* Spring
-  * Add Swagger dependency   
-  * Explain Service application layer
-  * Introduce @Service annotation
+* Controller with correct name exist and is placed in corresponding package.
+* For each controller exists corresponding feature branch.
+* Each feature branch is merged into main branch. (Use pull request for merging. Not mandatory however.)
