@@ -128,4 +128,6 @@ public class BorrowingController {
 
 * Controller with correct name exist and is placed in corresponding package.
 * For each controller exists corresponding feature branch.
-* Each feature branch is merged into main branch. (Use pull request for merging. Not mandatory however.)
+* Each feature branch is merged into main branch. (Use pull request for merging. Not mandatory however.).
+* Application starts without exceptions.
+* Application logs (SYSOUT) request for each of the above REST API endpoints.
