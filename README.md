@@ -4,6 +4,11 @@
 
 ### Objective
 * Basic Maven explanation.
+  * Maven repository concept. Local and remote.
+  * Basic build example with dependencies download.
+  * mvn clean install
+  * mvn spring-boot:run
+  * Maven relation to IntelliJ IDE
 * Explain application layering.
 * Spring:
   * Introduce @Service annotation.
