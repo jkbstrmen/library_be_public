@@ -3,11 +3,12 @@
 ## Week 2
 
 ### Objective
-* Describe and implement service concept.
-* Spring
-  * Add Swagger dependency
-  * Explain Service application layer
-  * Introduce @Service annotation
+* Basic Maven explanation.
+* Explain application layering.
+* Spring:
+  * Introduce @Service annotation.
+  * Explain Autowiring.
+* Introduce and explain Swagger.
 
 ## Week 1
 
