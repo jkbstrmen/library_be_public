@@ -15,9 +15,11 @@
   * Explain Autowiring.
 * Introduce and explain Swagger.
 
+### Prerequisites
+* Working WEEK1 homework code
 
 ### Homework
-####  Using Customer service as an example, implement controllers for following functionalities:
+####  Using Customer service as an example, implement business logic (service) for following functionalities:
 **Category**
 
 ```java 
@@ -46,10 +48,19 @@ public class BorrowingService {
 ```
 
 #### For each functionality implement:
-* Service backing methods for each of the Controller's API method
-* *DetailDto - placed in a service package
-* *RequestDto - placed in a service package
+* Service backing methods for each of the Controller's API method.
+* *DetailDto - placed in a service package.
+* *RequestDto - placed in a service package.
 
+#### Other
+* Enable swaggers
+
+#### Homework acceptance criteria
+* For each service exists corresponding feature branch.
+* Each feature branch is merged into main branch. (Use pull request for merging. Not mandatory however.).
+* Application compiles and starts properly.
+* Swagger is accessible.
+* All services are implemented and functional using REST Api calls.
 
 ## Week 1
 
