@@ -51,6 +51,26 @@ public class BorrowingService {
 * Service backing methods for each of the Controller's API method.
 * *DetailDto - placed in a service package.
 * *RequestDto - placed in a service package.
+* DTO properties: (If not mentioned, the request class does not contain an 'id' attribute)
+  * Book detail
+    * id 
+    * authorFirstName
+    * authorLastName
+    * title
+    * isbn
+    * count (number of a given title in library)
+  * Category detail
+    * id
+    * name
+    * categoryIds (One book can be listed in multiple categories)
+  * Borrowing detail
+    * id
+    * BookDetailDto
+    * CustomerDetailDto
+    * date (represent date of borrowing)
+  * Borrowing request
+    * bookId
+    * customerId
 
 #### Other
 * Enable swaggers
