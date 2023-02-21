@@ -15,6 +15,42 @@
   * Explain Autowiring.
 * Introduce and explain Swagger.
 
+
+### Homework
+####  Using Customer service as an example, implement controllers for following functionalities:
+**Category**
+
+```java 
+package sk.umb.example.library.category.service;
+
+public class CategoryService {
+}
+```
+
+**Book**
+
+```java 
+package sk.umb.example.library.book.service;
+
+public class BookService {
+}
+```
+
+**Borrowing**
+
+```java 
+package sk.umb.example.library.borrowing.service;
+
+public class BorrowingService {
+}
+```
+
+#### For each functionality implement:
+* Service backing methods for each of the Controller's API method
+* *DetailDto - placed in a service package
+* *RequestDto - placed in a service package
+
+
 ## Week 1
 
 ### Objective
