@@ -72,3 +72,9 @@ public class BorrowingController {
 * Create resource / POST 
 * Update resource / PUT
 * Delete resource / DELETE
+
+#### Homework acceptance criteria
+
+* Controller with correct name exist and is placed in corresponding package.
+* For each controller exists corresponding feature branch.
+* Each feature branch is merged into main branch. (Use pull request for merging. Not mandatory however.)
