@@ -85,8 +85,8 @@ public class BorrowingService {
 **Branching hint** 
 
 Since borrowing detail partially depends on the implementation of Category, Book and Customer there are two options for dedicated borrowing feature branch.
-  * Wait until the implementation of all dependencies are present in main branch, then fork borrowing feature branch from the main.
-  * For borrowing feature branch at the begining of the implementation, implement borrowing request (request is independent of Customer and Book implementation), wait until Customer and Book implementation are merged into main branch, then backmerge the main branch into the borrowing feature branch.
+  * Wait until the implementation of all dependencies are present in main branch, then fork the borrowing feature branch from the main.
+  * Fork borrowing feature branch at the begining of the implementation, implement borrowing request (requestDto is independent of Customer and Book implementations), wait until the Customer and Book implementation are merged into the main branch, then backmerge the main branch into the borrowing feature branch.
 
 ## Week 1
 
