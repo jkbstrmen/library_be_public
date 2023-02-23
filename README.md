@@ -82,6 +82,12 @@ public class BorrowingService {
 * Swagger is accessible.
 * All services are implemented and functional using REST Api calls.
 
+**Branching hint** 
+
+Since borrowing detail partially depends on the implementation of Category, Book and Customer there are two options for dedicated borrowing feature branch.
+  * Wait until the implementation of all dependencies are present in main branch, then fork borrowing feature branch from the main.
+  * For borrowing feature branch at the begining of the implementation, implement borrowing request (request is independent of Customer and Book implementation), wait until Customer and Book implementation are merged into main branch, then backmerge the main branch into the borrowing feature branch.
+
 ## Week 1
 
 ### Objective
