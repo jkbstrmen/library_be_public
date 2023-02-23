@@ -59,10 +59,10 @@ public class BorrowingService {
     * title
     * isbn
     * count (number of a given title in library)
+    * categoryIds (One book can be listed in multiple categories)
   * Category detail
     * id
     * name
-    * categoryIds (One book can be listed in multiple categories)
   * Borrowing detail
     * id
     * BookDetailDto
