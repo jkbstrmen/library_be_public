@@ -129,6 +129,8 @@ public class CustomerController {
 **Category**
 
 ```java 
+// url: /api/categories
+
 package sk.umb.example.library.category.controller;
 
 public class CategoryController {
@@ -138,6 +140,8 @@ public class CategoryController {
 **Book**
 
 ```java 
+// url: /api/books
+
 package sk.umb.example.library.book.controller;
 
 public class BookController {
@@ -147,6 +151,8 @@ public class BookController {
 **Borrowing**
 
 ```java 
+// url: /api/borrowings
+
 package sk.umb.example.library.borrowing.controller;
 
 public class BorrowingController {
