@@ -18,7 +18,7 @@ public class CustomerController {
 
     @GetMapping("/api/customers")
     public List<CustomerDetailDTO> searchCustomer(@RequestParam(required = false) String lastName) {
-        System.out.println("Search customer called.");
+        System.out.println("Search customer called twice.");
 
         return Strings.isEmpty(lastName) ? customerService.getAllCustomers()
                                          : customerService.searchCustomerByLastName(lastName);
