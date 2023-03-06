@@ -6,6 +6,8 @@ public class CustomerRequestDto {
 
     private String emailContact;
 
+    private Long addressId;
+
     public Long getAddressId() {
         return addressId;
     }
@@ -13,8 +15,6 @@ public class CustomerRequestDto {
     public void setAddressId(Long addressId) {
         this.addressId = addressId;
     }
-
-    private Long addressId;
 
     public String getFirstName() {
         return firstName;

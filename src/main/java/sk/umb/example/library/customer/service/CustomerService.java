@@ -1,5 +1,6 @@
 package sk.umb.example.library.customer.service;
 
+import jakarta.transaction.Transactional;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.stereotype.Service;
 import sk.umb.example.library.address.persistence.entity.AddressEntity;
@@ -36,12 +37,14 @@ public class CustomerService {
         return mapToDto(getCustomerEntityById(customerId));
     }
 
+    @Transactional
     public Long createCustomer(CustomerRequestDto customerRequestDto) {
         CustomerEntity entity = mapToEntity(customerRequestDto);
 
         return customerRepository.save(entity).getId();
     }
 
+    @Transactional
     public void updateCustomer(Long customerId, CustomerRequestDto customerRequestDTO) {
         CustomerEntity customer = getCustomerEntityById(customerId);
 
@@ -56,8 +59,11 @@ public class CustomerService {
         if (! Strings.isEmpty(customerRequestDTO.getEmailContact())) {
             customer.setEmailContact(customerRequestDTO.getEmailContact());
         }
+
+        customerRepository.save(customer);
     }
 
+    @Transactional
     public void deleteCustomer(Long customerId) {
         customerRepository.deleteById(customerId);
     }
@@ -103,6 +109,7 @@ public class CustomerService {
 
     private CustomerDetailDto mapToDto(CustomerEntity customerEntity) {
         CustomerDetailDto dto = new CustomerDetailDto();
+        dto.setId(customerEntity.getId());
         dto.setAddress(mapToDto(customerEntity.getAddress()));
         dto.setFirstName(customerEntity.getFirstName());
         dto.setLastName(customerEntity.getLastName());
@@ -113,18 +120,8 @@ public class CustomerService {
 
     private AddressDetailDto mapToDto(AddressEntity addressEntity) {
         AddressDetailDto dto = new AddressDetailDto();
+        dto.setId(addressEntity.getId());
         dto.setCity(addressEntity.getCity());
-
-        return dto;
-    }
-
-    private static CustomerDetailDto mapToCustomerDetailDTO(Long index, CustomerRequestDto customerRequestDTO) {
-        CustomerDetailDto dto = new CustomerDetailDto();
-
-        dto.setId(index);
-        dto.setLastName(customerRequestDTO.getLastName());
-        dto.setFirstName(customerRequestDTO.getFirstName());
-        dto.setEmailContact(customerRequestDTO.getEmailContact());
 
         return dto;
     }
