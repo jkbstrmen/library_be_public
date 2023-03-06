@@ -55,8 +55,9 @@ public class BorrowingEntity {
 }
 ```
 
-
 #### Homework acceptance criteria
+* All code has to be present in a repository
+* Application must be compilable and running
 
 
 ## Week 3
