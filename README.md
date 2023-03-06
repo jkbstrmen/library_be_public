@@ -1,5 +1,16 @@
 # Library backend
 
+## Week 4
+
+### Objective
+* Introduce persistence layer
+* Explain Spring Repository
+* Explain JPA and Hibernate
+* Connect application to DB using Hibernate
+
+### Prerequisites
+Docker is up and running (week3 homework)
+
 ## Week 3
 ### Objective
 * Docker and docker compose introduction
