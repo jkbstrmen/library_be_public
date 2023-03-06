@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import sk.umb.example.library.address.service.AddressDetailDTO;
+import sk.umb.example.library.address.service.AddressDetailDto;
 import sk.umb.example.library.address.service.AddressService;
 
 import java.util.List;
@@ -18,12 +18,12 @@ public class AddressController {
     }
 
     @GetMapping("/api/addresses")
-    public List<AddressDetailDTO> getAllAddresses() {
+    public List<AddressDetailDto> getAllAddresses() {
         return addressService.getAllAddresses();
     }
 
     @PostMapping("/api/addresses")
-    public Long createAddress(@RequestBody AddressDetailDTO addressDetailDTO) {
+    public Long createAddress(@RequestBody AddressDetailDto addressDetailDTO) {
         return addressService.createAddress(addressDetailDTO);
     }
 }

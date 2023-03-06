@@ -7,11 +7,13 @@ import java.util.List;
 
 @Service
 public class AddressService {
-    public List<AddressDetailDTO> getAllAddresses() {
+
+
+    public List<AddressDetailDto> getAllAddresses() {
         return Collections.EMPTY_LIST;
     }
 
-    public Long createAddress(AddressDetailDTO addressDetailDTO) {
+    public Long createAddress(AddressDetailDto addressDetailDTO) {
         return 1L;
     }
 }

@@ -1,17 +1,7 @@
 package sk.umb.example.library.address.service;
 
-public class AddressDetailDTO {
-    private Long id;
-
+public class AddressRequestDto {
     private String city;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getCity() {
         return city;
