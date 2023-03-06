@@ -16,10 +16,16 @@ Docker is up and running (week3 homework)
 * Docker and docker compose introduction
   * Explain docker and docker usecase 
   * Install docker on local machine
-  * Run docker hello-world example
+  * Test docker installation
+    * > ```docker run hello-world```
+  * Install docker-compose on local machine
 * Introduce database IDE
   * Install DBeaver
-  * Connect DBeaver to docker database instance
+  * Connect DBeaver to docker database instance. 
+
+![DBeaver Postgres](images/dbeaver-postgres.png)
+  
+![DBeaver Config](images/dbeaver-config.png)
 
 ### Prerequisites
 * None
