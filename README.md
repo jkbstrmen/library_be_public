@@ -1,5 +1,24 @@
 # Library backend
 
+## Week 5
+
+### Objective
+* Introduce agile concepts
+* Introduce Jira and Kanban
+* Project topic description
+
+### Homework
+* Create Jira free account
+* Create project Kanban board
+* Select project topic
+* Create Git repository for selected topic backend
+* Create Git repository for selected topic frontend
+
+#### Homework acceptance criteria
+* Jira with project Kanban Board is created
+* Git repository for project backend is created
+* Git repository for project frontend is created
+
 ## Week 4
 
 ### Objective
