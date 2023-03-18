@@ -160,8 +160,7 @@ public class BorrowingService {
 * DTO properties: (If not mentioned, the request class does not contain an 'id' attribute)
   * Book detail
     * id 
-    * authorFirstName
-    * authorLastName
+    * author
     * title
     * isbn
     * count (number of a given title in library)
