@@ -1,5 +1,6 @@
 package sk.umb.example.library.customer.controller;
 
+import jakarta.validation.Valid;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.web.bind.annotation.*;
 import sk.umb.example.library.customer.service.CustomerRequestDto;
@@ -31,13 +32,13 @@ public class CustomerController {
     }
 
     @PostMapping("/api/customers")
-    public Long createCustomer(@RequestBody CustomerRequestDto customerRequestDTO) {
+    public Long createCustomer(@Valid @RequestBody CustomerRequestDto customerRequestDTO) {
         System.out.println("Create customer called:");
         return customerService.createCustomer(customerRequestDTO);
     }
 
     @PutMapping("/api/customers/{customerId}")
-    public void updateCustomer(@PathVariable Long customerId, @RequestBody CustomerRequestDto customerRequestDTO) {
+    public void updateCustomer(@PathVariable Long customerId, @Valid  @RequestBody CustomerRequestDto customerRequestDTO) {
         System.out.println("Update customer called: ID = " + customerId);
         customerService.updateCustomer(customerId, customerRequestDTO);
     }

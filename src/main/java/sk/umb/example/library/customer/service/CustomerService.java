@@ -8,6 +8,7 @@ import sk.umb.example.library.address.persistence.repository.AddressRepository;
 import sk.umb.example.library.address.service.AddressDetailDto;
 import sk.umb.example.library.customer.persistence.entity.CustomerEntity;
 import sk.umb.example.library.customer.persistence.repository.CustomerRepository;
+import sk.umb.example.library.exception.LibraryApplicationException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,8 +41,10 @@ public class CustomerService {
     @Transactional
     public Long createCustomer(CustomerRequestDto customerRequestDto) {
         CustomerEntity entity = mapToEntity(customerRequestDto);
-
         return customerRepository.save(entity).getId();
+    }
+
+    private void validateAddress(Long addressId) {
     }
 
     @Transactional
@@ -86,6 +89,8 @@ public class CustomerService {
 
             if (address.isPresent()) {
                 customer.setAddress(address.get());
+            } else {
+                throw new LibraryApplicationException("addressId is invalid.");
             }
         }
 

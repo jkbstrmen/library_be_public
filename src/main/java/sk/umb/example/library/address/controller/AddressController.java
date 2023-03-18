@@ -1,5 +1,6 @@
 package sk.umb.example.library.address.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,7 +25,7 @@ public class AddressController {
     }
 
     @PostMapping("/api/addresses")
-    public Long createAddress(@RequestBody AddressRequestDto requestDto) {
+    public Long createAddress(@Valid @RequestBody AddressRequestDto requestDto) {
         return addressService.createAddress(requestDto);
     }
 }
