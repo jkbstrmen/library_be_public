@@ -79,6 +79,10 @@ public class BorrowingService {
 * *DetailDto - placed in a service package.
 * *RequestDto - placed in a service package.
 * DTO properties: (If not mentioned, the request class does not contain an 'id' attribute)
+  * Book Status (Java Enum)
+    * AVAILABLE
+    * NOT_AVAILABLE
+    * TEMPORARY_NOT_AVAILABLE
   * Book detail
     * id 
     * author
@@ -86,6 +90,7 @@ public class BorrowingService {
     * isbn
     * count (number of a given title in library)
     * categoryIds (One book can be listed in multiple categories)
+    * status (Book Status Enum)
   * Category detail
     * id
     * name
