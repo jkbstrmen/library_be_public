@@ -1,5 +1,17 @@
 # Library backend
 
+## Week 6
+### Objective
+* Introduce Exception Handling
+* Introduce Validation
+
+### Homework
+* Implement Exception Handler
+* Implement Validation for:
+  * POST/PUT CategoryController
+  * POST/PUT BookController
+  * POST/PUT BorrowingController
+
 ## Week 5
 
 ### Objective
