@@ -44,9 +44,6 @@ public class CustomerService {
         return customerRepository.save(entity).getId();
     }
 
-    private void validateAddress(Long addressId) {
-    }
-
     @Transactional
     public void updateCustomer(Long customerId, CustomerRequestDto customerRequestDTO) {
         CustomerEntity customer = getCustomerEntityById(customerId);
