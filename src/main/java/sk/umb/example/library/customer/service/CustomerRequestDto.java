@@ -10,7 +10,7 @@ public class CustomerRequestDto {
     @NotBlank(message = "Last name must not be empty.")
     private String lastName;
 
-    @Pattern(regexp = "^\\S+@\\S+\\.\\S+$")
+    @Pattern(regexp = "^\\S+@\\S+\\.\\S+$", message = "Invalid email address.")
     private String emailContact;
 
     @NotNull

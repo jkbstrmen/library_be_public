@@ -84,14 +84,12 @@ public class CustomerService {
     private CustomerEntity mapToEntity(CustomerRequestDto dto) {
         CustomerEntity customer = new CustomerEntity();
 
-        if ( ! Objects.isNull(dto.getAddressId()) ) {
-            Optional<AddressEntity> address = addressRepository.findById(dto.getAddressId());
+        Optional<AddressEntity> address = addressRepository.findById(dto.getAddressId());
 
-            if (address.isPresent()) {
-                customer.setAddress(address.get());
-            } else {
-                throw new LibraryApplicationException("addressId is invalid.");
-            }
+        if (address.isPresent()) {
+            customer.setAddress(address.get());
+        } else {
+            throw new LibraryApplicationException("AddressId is invalid.");
         }
 
         customer.setFirstName(dto.getFirstName());
