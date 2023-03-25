@@ -32,6 +32,19 @@ The decision about the approach must be decided based on the application securit
 
 Token based approach allows backend application to log out the user by simple deleting token from token table.
 
+### Basic Flows
+#### Token Generation. 
+* Post username / password to token generation url.
+* Method: POST
+* URL: /api/token
+* Token is returned in a response "Authorization" header.
+
+#### Send authorized request to business endpoints
+* Copy authorization token from token generation response
+* Add Authorization header to a request. (Including Bearer keyword.) 
+
+#### 
+
 ## Week 6
 ### Objective
 * Introduce Exception Handling

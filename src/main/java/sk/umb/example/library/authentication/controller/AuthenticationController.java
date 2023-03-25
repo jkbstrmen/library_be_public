@@ -21,7 +21,7 @@ public class AuthenticationController {
         this.authenticationService = authenticationService;
     }
 
-    @PostMapping("/api/authentication")
+    @PostMapping("/api/token")
     public void login(@RequestHeader(value = AUTHORIZATION_HEADER, required = false) Optional<String> authentication,
                       HttpServletResponse response) {
         if (authentication.isEmpty()) {
@@ -44,7 +44,7 @@ public class AuthenticationController {
         return  credentials.split(":", 2);
     }
 
-    @DeleteMapping("/api/authentication")
+    @DeleteMapping("/api/token")
     public void logoff(@RequestHeader(value = AUTHORIZATION_HEADER, required = true) Optional<String> authentication) {
         String token = authentication.get().substring("Bearer".length()).trim();
         authenticationService.tokenRemove(token);

@@ -40,7 +40,7 @@ public class WebSecurityConfig {
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring()
-                .requestMatchers(HttpMethod.POST, "/api/authentication")
+                .requestMatchers(HttpMethod.POST, "/api/token")
                 .requestMatchers("/swagger-ui/**",
                                  "/v3/api-docs/swagger-config",
                                  "/v3/api-docs",

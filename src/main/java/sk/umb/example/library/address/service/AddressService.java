@@ -17,7 +17,7 @@ public class AddressService {
         this.addressRepository = addressRepository;
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     public List<AddressDetailDto> getAllAddresses() {
         return mapToDto(addressRepository.findAll());
     }
