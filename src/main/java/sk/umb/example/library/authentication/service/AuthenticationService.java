@@ -1,8 +1,8 @@
 package sk.umb.example.library.authentication.service;
 
-import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import sk.umb.example.library.authentication.persistence.entity.RoleEntity;
@@ -23,26 +23,26 @@ public class AuthenticationService {
     private static final int TOKEN_VALIDITY_IN_MINUTES = 15;
     private final UserRepository userRepository;
     private final TokenRepository tokenRepository;
-    private final PasswordEncoder passwordEncoder;
+//    private final PasswordEncoder passwordEncoder;
 
     public AuthenticationService(UserRepository userRepository, TokenRepository tokenRepository) {
         this.userRepository = userRepository;
         this.tokenRepository = tokenRepository;
-        this.passwordEncoder = new BCryptPasswordEncoder();
+//        this.passwordEncoder = new BCryptPasswordEncoder();
     }
 
     @Transactional
     public String authenticate(String username, String password) {
         Optional<UserEntity> optionalUser = userRepository.findByUsername(username);
 
-        if (optionalUser.isEmpty()) {
-            throw new AuthenticationCredentialsNotFoundException("Username and/or password do not match!");
-        }
-
-        if ( ! passwordEncoder.matches(password,
-                optionalUser.get().getPasswordHash())) {
-            throw new AuthenticationCredentialsNotFoundException("Username and/or password do not match!");
-        }
+//        if (optionalUser.isEmpty()) {
+//            throw new AuthenticationCredentialsNotFoundException("Username and/or password do not match!");
+//        }
+//
+//        if ( ! passwordEncoder.matches(password,
+//                optionalUser.get().getPasswordHash())) {
+//            throw new AuthenticationCredentialsNotFoundException("Username and/or password do not match!");
+//        }
 
         TokenEntity token = new TokenEntity();
         String randomString = UUID.randomUUID().toString();
@@ -60,7 +60,7 @@ public class AuthenticationService {
         Optional<TokenEntity> optionalToken = tokenRepository.findByToken(token);
 
         if (optionalToken.isEmpty()) {
-            throw new AuthenticationCredentialsNotFoundException("Authentication failed!");
+//            throw new AuthenticationCredentialsNotFoundException("Authentication failed!");
         }
 
         validateTokenExpiration(optionalToken.get());
@@ -78,7 +78,7 @@ public class AuthenticationService {
         LocalDateTime tokenExpiration = token.getValidUntil().plus(TOKEN_VALIDITY_IN_MINUTES, ChronoUnit.MINUTES);
 
         if ( now.isAfter(tokenExpiration) ) {
-            throw new AuthenticationCredentialsNotFoundException("Authentication failed!");
+//            throw new AuthenticationCredentialsNotFoundException("Authentication failed!");
         }
     }
 
