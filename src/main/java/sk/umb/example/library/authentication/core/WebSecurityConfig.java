@@ -41,20 +41,9 @@ public class WebSecurityConfig {
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring()
                 .requestMatchers(HttpMethod.POST, "/api/authentication")
-                .requestMatchers(HttpMethod.GET, "/swagger-ui/index.html");
+                .requestMatchers("/swagger-ui/**",
+                                 "/v3/api-docs/swagger-config",
+                                 "/v3/api-docs",
+                                 "/swagger-resources/**");
     }
-
-//    @Override
-//    public void configure(WebSecurity webSecurity) throws Exception {
-//        webSecurity.ignoring().antMatchers(HttpMethod.POST, "/api/authentication");
-//    }
-//
-//    @Override
-//    protected void configure(HttpSecurity httpSecurity) throws Exception {
-//        httpSecurity.csrf().disable()
-//                .authorizeRequests().anyRequest().authenticated().and()
-//                .exceptionHandling().authenticationEntryPoint(demoAuthenticationEntryPoint).and()
-//                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-//                .addFilterBefore(new DemoAuthenticationFilter(authenticationService), UsernamePasswordAuthenticationFilter.class);
-//    }
 }
