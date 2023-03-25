@@ -2,6 +2,7 @@ package sk.umb.example.library.customer.service;
 
 import jakarta.transaction.Transactional;
 import org.apache.logging.log4j.util.Strings;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import sk.umb.example.library.address.persistence.entity.AddressEntity;
 import sk.umb.example.library.address.persistence.repository.AddressRepository;
@@ -26,25 +27,30 @@ public class CustomerService {
         this.addressRepository = addressRepository;
     }
 
+    @PreAuthorize("hasRole('ROLE_USER')")
     public List<CustomerDetailDto> getAllCustomers() {
         return mapToDtoList(customerRepository.findAll());
     }
 
+    @PreAuthorize("hasRole('ROLE_USER')")
     public List<CustomerDetailDto> searchCustomerByLastName(String lastName) {
         return mapToDtoList(customerRepository.findByLastName(lastName));
     }
 
+    @PreAuthorize("hasRole('ROLE_USER')")
     public CustomerDetailDto getCustomerById(Long customerId) {
         return mapToDto(getCustomerEntityById(customerId));
     }
 
     @Transactional
+    @PreAuthorize("hasRole('ROLE_USER')")
     public Long createCustomer(CustomerRequestDto customerRequestDto) {
         CustomerEntity entity = mapToEntity(customerRequestDto);
         return customerRepository.save(entity).getId();
     }
 
     @Transactional
+    @PreAuthorize("hasRole('ROLE_USER')")
     public void updateCustomer(Long customerId, CustomerRequestDto customerRequestDTO) {
         CustomerEntity customer = getCustomerEntityById(customerId);
 
@@ -64,6 +70,7 @@ public class CustomerService {
     }
 
     @Transactional
+    @PreAuthorize("hasRole('ROLE_USER')")
     public void deleteCustomer(Long customerId) {
         customerRepository.deleteById(customerId);
     }

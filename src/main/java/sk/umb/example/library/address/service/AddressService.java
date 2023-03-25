@@ -1,6 +1,7 @@
 package sk.umb.example.library.address.service;
 
 import jakarta.transaction.Transactional;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import sk.umb.example.library.address.persistence.entity.AddressEntity;
 import sk.umb.example.library.address.persistence.repository.AddressRepository;
@@ -16,15 +17,17 @@ public class AddressService {
         this.addressRepository = addressRepository;
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public List<AddressDetailDto> getAllAddresses() {
         return mapToDto(addressRepository.findAll());
     }
 
+    @Transactional
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Long createAddress(AddressRequestDto requestDto) {
         return addressRepository.save(mapToEntity(requestDto)).getId();
     }
 
-    @Transactional
     private List<AddressDetailDto> mapToDto(List<AddressEntity> addressEntities) {
         List<AddressDetailDto> dtos = new ArrayList<>();
 
