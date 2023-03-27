@@ -18,8 +18,8 @@ public class TokenEntity {
     @JoinColumn(name = "user_id")
     private UserEntity user;
 
-    @Column(name = "valid_until", columnDefinition = "TIMESTAMP")
-    private LocalDateTime validUntil;
+    @Column(name = "created", columnDefinition = "TIMESTAMP")
+    private LocalDateTime created;
 
     public Long getId() {
         return id;
@@ -45,11 +45,11 @@ public class TokenEntity {
         this.user = user;
     }
 
-    public LocalDateTime getValidUntil() {
-        return validUntil;
+    public LocalDateTime getCreated() {
+        return created;
     }
 
-    public void setValidUntil(LocalDateTime validUntil) {
-        this.validUntil = validUntil;
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
     }
 }

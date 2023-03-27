@@ -10,7 +10,6 @@
 
 ### Recommended approach:
 
-* checkout security-db-starter branch. The branch contains unsecured simple Book storage example
 * use included docker-compose to spin up database
 
 ### Notes

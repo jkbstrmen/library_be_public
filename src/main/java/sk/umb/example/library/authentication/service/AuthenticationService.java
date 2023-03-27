@@ -48,7 +48,7 @@ public class AuthenticationService {
         String randomString = UUID.randomUUID().toString();
         token.setToken(randomString);
         token.setUser(optionalUser.get());
-        token.setValidUntil(LocalDateTime.now());
+        token.setCreated(LocalDateTime.now());
 
         tokenRepository.save(token);
 
@@ -75,7 +75,7 @@ public class AuthenticationService {
 
     private void validateTokenExpiration(TokenEntity token) {
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime tokenExpiration = token.getValidUntil().plus(TOKEN_VALIDITY_IN_MINUTES, ChronoUnit.MINUTES);
+        LocalDateTime tokenExpiration = token.getCreated().plus(TOKEN_VALIDITY_IN_MINUTES, ChronoUnit.MINUTES);
 
         if ( now.isAfter(tokenExpiration) ) {
             throw new AuthenticationCredentialsNotFoundException("Authentication failed!");
